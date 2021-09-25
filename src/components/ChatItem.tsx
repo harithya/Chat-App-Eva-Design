@@ -13,11 +13,11 @@ interface Props {
 }
 
 const ChatItem: FC<Props> = (props) => {
-    const navigation = useNavigation();
+    const navigation = useNavigation<any>();
     return (
         <ListItem
             title={props.item.name}
-            onPress={() => navigation.navigate("Chat")}
+            onPress={() => navigation.navigate({ name: "Chat", key: "" })}
             description={eva => <Text {...eva} numberOfLines={1}>{props.item.last_chat}</Text>}
             accessoryLeft={() => (<Avatar
                 size='large'
